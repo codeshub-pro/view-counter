@@ -21,5 +21,8 @@ def reset(website=""):
     return "Done"
   else:
     return "//No Output"
+@app.route("/check/<website>")
+def check(website):
+  return str(db.get(website,0))
   
 app.run(host="0.0.0.0",port=81)
